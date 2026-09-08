@@ -124,5 +124,12 @@
     <jsp:include page="includes/footer.jsp" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+	    // Si la URL contiene parámetros (como ?status=error o ?status=success)
+	    if (window.location.search.length > 0) {
+	        // Reemplaza la URL en el historial sin recargar la página
+	        window.history.replaceState({}, document.title, window.location.pathname);
+	    }
+	</script>
 </body>
 </html>

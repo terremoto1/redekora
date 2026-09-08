@@ -14,25 +14,27 @@
                 <small class="text-white-50 d-block mt-2">Estudio de decoración, reformas integrales y diseño de cocinas.</small>
             </div>
             
-            <!-- Columna 2: Ubicación y Contacto -->
+            <!-- Columna 2: Ubicación y Contacto con Iconos Azules -->
             <div class="col-lg-3 col-md-5">
                 <h6 class="fw-bold text-uppercase mb-3 text-light border-bottom border-secondary pb-2">Dónde Estamos</h6>
-                <p class="mb-1 text-white-50"><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Calle Landaburu 2, Bajo 3</p>
-                <p class="mb-2 text-white-50 ms-4">Barakaldo - Bizkaia</p>
-                <p class="mb-0 text-white-50"><i class="bi bi-envelope-fill me-2 text-primary"></i>info@redekora40.com</p>
+                <p class="mb-1 text-white-50">
+                    <i class="bi bi-geo-alt-fill me-2 text-primary fs-5"></i>Calle Landaburu 2, Bajo 3
+                </p>
+                <p class="mb-1 text-white-50">Barakaldo - Bizkaia</p>
+                <p class="mb-0 text-white-50">
+                    <i class="bi bi-envelope-fill me-2 text-primary fs-5"></i>info@redekora40.com
+                </p>
             </div>
             
-            <!-- Columna 3: Horarios alineados en paralelo -->
+            <!-- Columna 3: Horarios -->
             <div class="col-lg-5 col-md-7">
                 <h6 class="fw-bold text-uppercase mb-3 text-light border-bottom border-secondary pb-2">Horario Comercial</h6>
                 <div class="row g-2">
-                    <!-- Bloque Lunes a Jueves -->
                     <div class="col-6">
                         <p class="fw-semibold text-light mb-1">Lunes a Jueves:</p>
                         <p class="text-white-50 mb-0">9:30 - 13:30</p>
                         <p class="text-white-50 mb-0">16:30 - 19:30</p>
                     </div>
-                    <!-- Bloque Viernes (Alineado en paralelo) -->
                     <div class="col-6">
                         <p class="fw-semibold text-light mb-1">Viernes:</p>
                         <p class="text-white-50 mb-0">9:30 - 13:30</p>
