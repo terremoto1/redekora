@@ -19,14 +19,18 @@ public class EmailService {
             return false;
         }
 
-        // Configuración de propiedades para el servidor SMTP de Gmail
+     // Configuración optimizada para Render usando SSL en puerto 465
         Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.enable", "true"); // Usa SSL directamente
         props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
+        // Definir tiempos límite explícitos para evitar bloqueos largos
+        props.put("mail.smtp.connectiontimeout", "10000"); // 10 segundos
+        props.put("mail.smtp.timeout", "10000");
+        
         // Crear la sesión autenticada
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
