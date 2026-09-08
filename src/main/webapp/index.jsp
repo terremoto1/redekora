@@ -7,7 +7,7 @@
     <!-- Estilos CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <!-- 1. INCLUIR MENÚ SUPERIOR -->
     <jsp:include page="includes/header.jsp" />

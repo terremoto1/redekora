@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
     <!-- Incluir Menú Superior -->
     <jsp:include page="includes/header.jsp" />
@@ -23,6 +23,28 @@
                     <h1 class="fw-bold text-uppercase">Solicitar Presupuesto</h1>
                     <p class="text-muted">Déjanos tus datos y el tipo de proyecto que necesitas. Te llamaremos para concretar una cita sin compromiso.</p>
                 </div>
+
+                <!-- Bloque de Notificaciones de Estado -->
+                <%
+                    String status = request.getParameter("status");
+                    if ("success".equals(status)) {
+                %>
+                    <div class="alert alert-success alert-dismissible fade show shadow-sm mb-4" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        <strong>¡Solicitud enviada con éxito!</strong> Nos pondremos en contacto contigo lo antes posible.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <%
+                    } else if ("error".equals(status)) {
+                %>
+                    <div class="alert alert-danger alert-dismissible fade show shadow-sm mb-4" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>Hubo un problema al enviar la solicitud.</strong> Por favor, inténtalo de nuevo o contáctanos por teléfono.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <%
+                    }
+                %>
 
                 <!-- Tarjeta del Formulario -->
                 <div class="card border-0 shadow-sm p-4 p-md-5 bg-white rounded-3">
@@ -43,8 +65,8 @@
                                 <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej. 600 000 000" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="email" class="form-label fw-semibold">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com">
+                                <label for="email" class="form-label fw-semibold">Correo Electrónico *</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="horario" class="form-label fw-semibold">Preferencia para llamarte</label>
@@ -71,7 +93,7 @@
                                     <option value="Reforma de Baño">Reforma de Baño</option>
                                     <option value="Decoración / Papeles Pintados">Decoración / Papeles Pintados</option>
                                     <option value="Coordinación de Gremios">Coordinación de Gremios</option>
-                                    <option value="Otro">Otro consulta</option>
+                                    <option value="Otra consulta">Otra consulta</option>
                                 </select>
                             </div>
                             <div class="col-md-6">

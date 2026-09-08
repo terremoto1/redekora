@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<footer class="footer-custom text-white pt-5 pb-4 mt-5" style="background-color: #2b2e31;">
+<footer class="footer-custom text-white pt-5 pb-4 mt-auto" style="background-color: #2b2e31;">
     <div class="container">
         <div class="row g-4 align-items-start">
             

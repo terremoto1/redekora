@@ -1,23 +1,24 @@
 package com.redekora.rest.v1;
 
-import java.io.IOException;
-
+import com.redekora.service.EmailService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
-
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet("/EnviarPresupuestoServlet")
 public class EnviarPresupuestoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        // Configurar codificación para acentos y caracteres especiales
         request.setCharacterEncoding("UTF-8");
 
-        // Capturar los campos del formulario
+        // Capturar los campos exactamente con los atributos 'name' del JSP
         String nombre = request.getParameter("nombre");
         String telefono = request.getParameter("telefono");
         String email = request.getParameter("email");
@@ -26,9 +27,31 @@ public class EnviarPresupuestoServlet extends HttpServlet {
         String poblacion = request.getParameter("poblacion");
         String comentario = request.getParameter("comentario");
 
-        // TODO: Aquí integraremos el servicio de envío de email (JavaMailSender / SendGrid)
-        
-        // Redirigir a una página de confirmación o de vuelta al inicio
-        response.sendRedirect("index.jsp?mensaje=exito");
+        // Construir un mensaje completo combinando la información adicional
+        StringBuilder detalle = new StringBuilder();
+        if (horarioLlamada != null && !horarioLlamada.isEmpty()) {
+            detalle.append("<strong>Preferencia de llamada:</strong> ").append(horarioLlamada).append("<br>");
+        }
+        if (poblacion != null && !poblacion.isEmpty()) {
+            detalle.append("<strong>Ubicación de la obra:</strong> ").append(poblacion).append("<br>");
+        }
+        if (comentario != null && !comentario.isEmpty()) {
+            detalle.append("<br><strong>Comentarios:</strong><br>").append(comentario);
+        }
+
+        // Llamar al servicio de envío
+        boolean exito = EmailService.enviarPresupuesto(
+            nombre, 
+            email, 
+            telefono, 
+            tipoServicio, 
+            detalle.toString()
+        );
+
+        if (exito) {
+            response.sendRedirect("presupuesto.jsp?status=success");
+        } else {
+            response.sendRedirect("presupuesto.jsp?status=error");
+        }
     }
 }
