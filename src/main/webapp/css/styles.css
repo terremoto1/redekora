@@ -1,0 +1,73 @@
+/* ==========================================
+   Estilos Generales de Redekora
+   ========================================== */
+
+/* Hero Section (index.jsp) */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    padding: 120px 0;
+    color: #fff;
+}
+
+/* Tarjetas de Servicios (index.jsp) */
+.card-service {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Sección Servicios (servicios.jsp) */
+.service-img {
+    max-height: 380px;
+    object-fit: cover;
+    width: 100%;
+}
+.gremio-card {
+    transition: transform 0.2s ease;
+}
+.gremio-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Sección Proyectos (proyectos.jsp) */
+.card-project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
+}
+.img-before-after {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+}
+.badge-antes {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(108, 117, 125, 0.9);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge-despues {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(13, 110, 253, 0.9);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
