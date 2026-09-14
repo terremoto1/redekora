@@ -1,73 +1,144 @@
 /* ==========================================
-   Estilos Generales de Redekora
+   REDEKORA - Estilos Corregidos
    ========================================== */
 
-/* Hero Section (index.jsp) */
+/* Fondo global y tipografía */
+body {
+	background-color: #f4f6f8 !important;
+	color: #2b2f33;
+	font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Encabezados de página */
+.bg-white.py-5.border-bottom {
+	background: linear-gradient(135deg, #ffffff 0%, #eef2f7 100%) !important;
+	border-bottom: 2px solid #e1e7ed !important;
+}
+
+h1.fw-bold {
+	color: #0f172a;
+	letter-spacing: -0.5px;
+}
+
+/* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    padding: 120px 0;
-    color: #fff;
+	background: linear-gradient(135deg, rgba(15, 23, 42, 0.75),
+		rgba(15, 23, 42, 0.65)),
+		url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')
+		center/cover no-repeat;
+	padding: 130px 0;
+	color: #ffffff;
 }
 
-/* Tarjetas de Servicios (index.jsp) */
-.card-service {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-service:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+.hero-section h1 {
+	font-size: 3.2rem;
+	font-weight: 800;
+	color: #ffffff;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Sección Servicios (servicios.jsp) */
+/* Botones */
+/* Corrección para los botones del filtro de catálogo */
+.btn-group .btn-outline-primary {
+    border-radius: 50rem !important; /* Mantiene la forma redondeada pill */
+    padding: 8px 24px !important;
+}
+
+/* Estado activo del botón seleccionado */
+.btn-group .btn-outline-primary.active,
+.btn-group .btn-outline-primary:active {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+    color: #ffffff !important;
+    border-color: #0d6efd !important;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* Tarjetas principales y contenedores */
+.card, .card-service, .card-project {
+	border: none !important;
+	border-radius: 12px !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+	transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+	overflow: hidden !important;
+	/* Evita que las imágenes invadan otras zonas */
+}
+
+.card:hover, .card-service:hover, .card-project:hover {
+	transform: translateY(-5px) !important;
+	box-shadow: 0 12px 28px rgba(13, 110, 253, 0.15) !important;
+}
+
+/* Control estricto de imágenes en la vista de servicios */
 .service-img {
-    max-height: 380px;
-    object-fit: cover;
-    width: 100%;
-}
-.gremio-card {
-    transition: transform 0.2s ease;
-}
-.gremio-card:hover {
-    transform: translateY(-3px);
+	height: 100% !important;
+	min-height: 350px;
+	max-height: 420px;
+	object-fit: cover !important;
+	width: 100% !important;
+	display: block;
 }
 
-/* Sección Proyectos (proyectos.jsp) */
-.card-project {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
-}
+/* Control de imágenes en vista de proyectos (Antes / Después) */
 .img-before-after {
-    height: 240px;
-    object-fit: cover;
-    width: 100%;
+	height: 240px !important;
+	object-fit: cover !important;
+	width: 100% !important;
+	display: block;
 }
+
+/* Tarjetas estándar del catálogo */
+.card-img-top {
+	height: 220px !important;
+	object-fit: cover !important;
+	width: 100% !important;
+}
+
+/* Badges (Etiquetas Antes / Después y categorías) */
 .badge-antes {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: rgba(108, 117, 125, 0.9);
-    color: #fff;
-    padding: 5px 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	background-color: rgba(30, 41, 59, 0.88);
+	color: #ffffff;
+	padding: 6px 14px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	border-radius: 6px;
+	text-transform: uppercase;
+	backdrop-filter: blur(4px);
+	z-index: 2;
 }
+
 .badge-despues {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background-color: rgba(13, 110, 253, 0.9);
-    color: #fff;
-    padding: 5px 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	background: linear-gradient(135deg, #0d6efd, #0a58ca);
+	color: #ffffff;
+	padding: 6px 14px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	border-radius: 6px;
+	text-transform: uppercase;
+	box-shadow: 0 2px 8px rgba(13, 110, 253, 0.4);
+	z-index: 2;
+}
+
+.badge.bg-primary-subtle {
+	background-color: #e0edff !important;
+	color: #0d6efd !important;
+	font-weight: 700;
+	border-radius: 6px;
+	padding: 6px 12px;
+}
+
+/* Especialidades y gremios */
+.gremio-card {
+	border-radius: 10px !important;
+	border: 1px solid #e2e8f0 !important;
+}
+
+.gremio-card:hover {
+	border-color: #0d6efd !important;
+	background-color: #ffffff !important;
 }

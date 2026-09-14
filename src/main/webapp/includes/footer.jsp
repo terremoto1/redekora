@@ -12,6 +12,11 @@
                 </div>
                 <p class="text-white-50 mb-1 fw-semibold fs-5">Transformamos tu hogar</p>
                 <small class="text-white-50 d-block mt-2">Estudio de decoración, reformas integrales y diseño de cocinas.</small>
+                <!-- Botón de Instagram -->
+                <a href="https://www.instagram.com/redekora40/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm d-inline-flex align-items-center gap-2 rounded-pill px-3 py-1">
+                    <i class="bi bi-instagram text-danger fs-6"></i>
+                    <span>Síguenos en Instagram</span>
+                </a>
             </div>
             
             <!-- Columna 2: Ubicación y Contacto con Iconos Azules -->
